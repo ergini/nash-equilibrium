@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nash Equilibrium</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <h1>
+          Please fill in all the values before calculating Nash Equilibrium.
+        </h1>
+        <button onclick="toggleModal()" id="modalBtn">Close</button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="table">
+        <h3 class="player1">Player 1</h3>
+        <div class="actions">
+          <h3 class="player2">Player 2</h3>
+          <div class="action">
+            <p>Up&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <div class="inside">
+              <p>Left</p>
+              <div class="inputs" id="AC">
+                <input type="text" id="ac1" />
+                <input type="text" id="ac2" />
+              </div>
+            </div>
+            <div class="inside">
+              <p>Right</p>
+              <div class="inputs" id="AD">
+                <input type="text" id="ad1" />
+                <input type="text" id="ad2" />
+              </div>
+            </div>
+          </div>
+          <div class="action">
+            <p>Down</p>
+            <div class="inside">
+              <div class="inputs" id="BC">
+                <input type="text" id="bc1" />
+                <input type="text" id="bc2" />
+              </div>
+            </div>
+            <div class="inside">
+              <div class="inputs" id="BD">
+                <input type="text" id="bd1" />
+                <input type="text" id="bd2" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button onclick="calculateNashEquilibrium()">Calculate</button>
+      <div id="result"></div>
+    </div>
+    <div class="info">
+      <h2>Menyra se si funksionon ky aplikacion:</h2>
+      <p>
+        Kemi <span class="player1"> lojtarin 1</span> dhe
+        <span class="player2">lojtarin 2</span>.
+      </p>
+      <p>
+        Secili lojtar ka 2 mundesi te veprimit, Secili prej tyre mund te zgjedhe
+        te veproje majtas ose djathtas, por duke ndryshuar prespektiva e tyre.
+      </p>
+      <p>
+        Ne pjesen e JavaScript e kemi funksionin
+        <span class="code">calculateNashEquilibrium()</span> i cili merr vleren
+        e secilit input te nje lojtari duke e krahasuar ate me vleren e nje
+        inputi tjeter, kjo mund te kuptohet me shume ne imazhin me poshte.
+      </p>
+      <img src="/images/nash.png" alt="nash-sample" />
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

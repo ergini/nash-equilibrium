@@ -27,7 +27,7 @@ function toggleModal() {
   document.body.classList.toggle("modal-open");
 }
 
-let operator = "<";
+let operator = ">";
 
 var modal1 = document.getElementById("modal1");
 var t1value = document.getElementById("t1value");

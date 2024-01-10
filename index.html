@@ -4,10 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nash Equilibrium</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
+    <button onclick="toggleModal1()">Change directions</button>
+    <div class="modal1" id="modal1">
+      <div class="modal-content">
+        <h1>This will change the directions of the players.</h1>
+        <div class="inputs">
+          <input type="text" id="t1value" />
+          <input type="text" id="t2value" />
+          <input type="text" id="t3value" />
+          <input type="text" id="t4value" />
+        </div>
+        <input type="text">
+        <button onclick="changeDirections()" id="modalBtn">Change</button>
+      </div>
+    </div>
     <div class="modal" id="modal">
       <div class="modal-content">
         <h1>
@@ -22,16 +36,16 @@
         <div class="actions">
           <h3 class="player2">Player 2</h3>
           <div class="action">
-            <p>Up&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <p id="t3">Up&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
             <div class="inside">
-              <p>Left</p>
+              <p id="t1">Left</p>
               <div class="inputs" id="AC">
                 <input type="text" id="ac1" />
                 <input type="text" id="ac2" />
               </div>
             </div>
             <div class="inside">
-              <p>Right</p>
+              <p id="t2">Right</p>
               <div class="inputs" id="AD">
                 <input type="text" id="ad1" />
                 <input type="text" id="ad2" />
@@ -39,7 +53,7 @@
             </div>
           </div>
           <div class="action">
-            <p>Down</p>
+            <p id="t4">Down</p>
             <div class="inside">
               <div class="inputs" id="BC">
                 <input type="text" id="bc1" />

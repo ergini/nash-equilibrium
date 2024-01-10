@@ -27,6 +27,32 @@ function toggleModal() {
   document.body.classList.toggle("modal-open");
 }
 
+let operator = "<";
+
+var modal1 = document.getElementById("modal1");
+var t1value = document.getElementById("t1value");
+var t2value = document.getElementById("t2value");
+var t3value = document.getElementById("t3value");
+var t4value = document.getElementById("t4value");
+var t1 = document.getElementById("t1");
+var t2 = document.getElementById("t2");
+var t3 = document.getElementById("t3");
+var t4 = document.getElementById("t4");
+
+function toggleModal1() {
+  modal1.classList.toggle("show-modal");
+  document.body.classList.toggle("modal-open");
+}
+
+function changeDirections() {
+  t1.textContent = t1value.value;
+  t2.textContent = t2value.value;
+  t3.textContent = t3value.value;
+  t4.textContent = t4value.value;
+
+  toggleModal1();
+}
+
 function calculateNashEquilibrium() {
   const variables = ["ac1", "ac2", "ad1", "ad2", "bc1", "bc2", "bd1", "bd2"];
   const values = {};
@@ -60,7 +86,7 @@ function calculateNashEquilibrium() {
     const propertyToFind = uppercaseElement.slice(0, -1);
     clearState(element);
     clearState(element2);
-    if (value1 > value2) {
+    if (eval(`value1 ${operator} value2`)) {
       bestResponsesPlayer1 += value1 + ", ";
       Equilibrium[0][propertyToFind][element] = true;
       document.getElementById(String(element)).style.backgroundColor =
@@ -80,7 +106,7 @@ function calculateNashEquilibrium() {
     const propertyToFind = uppercaseElement.slice(0, -1);
     clearState(element);
     clearState(element2);
-    if (value1 > value2) {
+    if (eval(`value1 ${operator} value2`)) {
       bestResponsesPlayer2 += value1 + ", ";
       Equilibrium[0][propertyToFind][element] = true;
       document.getElementById(String(element)).style.backgroundColor =
